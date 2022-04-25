@@ -1,8 +1,25 @@
 # cs301-project
-CS 301 Project: Samantha Bellofatto, Sarthak Mital
+# CS 301 Project 
+## Samantha Bellofatto, Sarthak Mital
 
-The problem our group will be investigating is the “H&M Personalized Fashion Recommendations” project. Through this project, we will investigate personalizing product recommendations using artificial intelligence and machine learning based on customer and product metadata. This is a very interesting challenge because of its real world applications. H&M, along with many other online retailers, is always looking to increase sales and improve their customer experience. By exploring this project, we will be able to gain a deeper understanding of machine learning and also apply it to a meaningful purpose that could be utilized in future career opportunities. To provide context and background into the field of machine learning and product recommendations, we will be examining “[THE USE OF MACHINE LEARNING ALGORITHMS IN RECOMMENDER SYSTEMS: A SYSTEMATIC REVIEW](https://www.ijrar.org/papers/IJRAR19K2241.pdf)”. 
+### Kaggle Competition Information
 
-To train our machine learner(s), we will be utilizing the data provided by H&M including images of each product, metadata for each product and customer, and training data consisting of the purchases each customer made on each date. As per the project description, we can choose to “investigate a categorical data type algorithm, or dive into NLP and image processing deep learning.” At this time, we plan to implement a multi-label classification learner focused on categorical data. We will analyze the transactions dataset and customer metadata to predict the probability of a customer buying a specific product. If the probability of purchasing is higher than a threshold, we will predict that the product will be bought by that customer. There are many multi-label classification algorithms that can be used as a reference point for our model. We plan to utilize the standard conventions for an imbalanced classification model and will adapt it to fit our data. We will then optimize the thresholds for determining if a product is predicted to be purchased by a customer. 
+Our model is an attempt for the [H&M Personalized Fashion Recommendation Kaggle Competition](https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations) created by H&M Group.
 
-Our model will attempt to predict the article_ids each customer will purchase during the 7-day period immediately after the training data period. Thus, to evaluate our results, we will compare the predicted article_ids to the actual article_ids purchased. Qualitatively, we expect to create tables linking customer_ids to predicted article_ids. The probability of any given article_id being purchased could be represented as a bar graph displaying the probability of a specific customer buying any of the specific articles in the next seven days. Quantitatively, we can measure our performance by using typical methods implemented by multi-label classification problems including log loss functions and Brier scores. We can also calculate the Mean Average Precision of the model since that is the value that the Kaggle competition uses to evaluate the submissions.
+### Dataset Information
+
+For our model, we used the **transaction_train.csv** file from the H&M Kaggle Competition which can be found [here](https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations/data?select=transactions_train.csv).
+
+In order to run the code in Google Colab, the dataset needed to be reduced since it was too large to upload.
+
+To do this, we used the following Python code:
+
+```
+transactions = pd.read_csv("data/transactions_train.csv")
+transactions = transactions[transactions.t_dat > "2020-09-01"]
+transactions.to_csv("transactions.csv")
+```
+
+We used this subset of the data including dates from 09/02/2020 until the end of the training data recorded period, which was 09/22/2020.
+
+To run the Colab notebook, we uploaded the **transactions.csv** file into the session.
