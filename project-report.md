@@ -26,7 +26,12 @@ our model, we were able to see that we recommended 25,912 unique articles which 
 stores since more customers would be buying these items than the articles not included in the recommendations.
 
 ## Related Work
-Related work here
+In [this paper](https://www.researchgate.net/publication/221140924_Utilizing_related_products_for_post-purchase_recommendation_in_e-commerce), they discuss how “related categories and products” is a hybrid approach of content based and collaborative filtering. After attempting to try other resource heavy approaches, we settled on this one considering that we never even tried accounting for photos in the data. Our models were purely based on the 3 csv files, and we still couldn’t get it to run on colab on the whole set. This model essentially uses content based filtering as an aid to collaborative filtering to increase the scope of our recommendations. We use both customer’s behavioral and product data to recommend items to purchase in a week’s time. This is very similar to what we were trying to achieve with our NN model, combining all article and customer data into a matrix and classifying it using layers.
+
+The other [TowardsDataScience article](https://towardsdatascience.com/the-frequently-bought-together-recommendation-system-b4ed076b24e5) adds frequently bought together items into the mix, which further increases the scope of these recommendations. It is a simple yet effective method of developing an association rules table between items that might be bought together.
+
+We use ideas from both these approaches to form our model.
+
 
 ## Data
 The data we are working with is from the [H&M Personalized Fashion Recommendations Kaggle competition](https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations) 
@@ -87,4 +92,5 @@ The other method we used was recommending items that were purchased together by 
 Our model has a Mean Average Precision @12 (MAP@12) of 0.0141. MAP is a metric for evaluating models like ours that are attempting to detect specific items or objects. Our MAP@12 is relatively low since it is around 1.41% precision. However, looking at the Kaggle competition entries, the highest MAP@12 score is 0.0364. Since the datasets are so large and there are over 1.3 million customers to make recommendations for, the precision is generally low for most models.
 
 ## Conclusion
-Conclusion here
+This project has allowed us to learn a lot about the different types of recommendation systems and the methods used for creating them. If we were to extend our model further, we could use other resources that would allow us to perform more complicated operations since we experienced some issues with the limitations of Colab. Moreover, we believe optimizing our neural network approach would have given us better results, so that is something that can be worked on. We think that our model could be used in a variety of different applications, not just retail or shopping data. By using an item based collaborative filtering approach, we could easily convert this model to fit different contexts as necessary.
+
