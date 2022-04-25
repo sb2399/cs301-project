@@ -76,7 +76,11 @@ The last and the final approach we could get working on Colab (without running o
 ## Experiments
 For our model, we used the previous transaction data to predict what articles each customer would be likely to buy in the 7 days after the training data period ended. We used a combination of methods in order to have more personalized recommendations for each individual customer. The most broad recommendation method was using the most popular items from the month of September 2020, since the training data goes up until 09/22/2020. We used these most popular items as the last recommendation after the more personalized ones since their popularity would mean that many customers would be interested in purchasing them. The graph below shows the number of transactions per day for the available data in the month of September. This shows that there is not a large fluctuation in the number of purchases over the month, so it is reasonable to assume that the popular items during this time may stay popular for the next week.
 
+![Transactions by Date](transaction-by-date.png)
+
 One of the more personalized methods of recommending articles was by looking at each customers’ most frequently purchased items in the most recent week of the training data. This allowed us to recommend to customers their most often repurchased items since they would be likely to buy them again if they have a history of purchasing the article many times. The graph below shows the top 20 most frequently purchased articles by customers. This shows that customers repurchase items many times, meaning that it is reasonable to assume that they would be purchasing this article again in the next 7 days.
+
+![Most Frequently Purchased](frequently-purchased.png)
 
 The other method we used was recommending items that were purchased together by the same customer. This allowed us to recommend articles to customers that share similar tastes since they have purchased the same item. Between the three of these methods, we were able to provide 12 article recommendations for each customer in the training data that they would be most likely to purchase.
 
