@@ -94,3 +94,5 @@ Our model has a Mean Average Precision @12 (MAP@12) of 0.0141. MAP is a metric f
 ## Conclusion
 This project has allowed us to learn a lot about the different types of recommendation systems and the methods used for creating them. If we were to extend our model further, we could use other resources that would allow us to perform more complicated operations since we experienced some issues with the limitations of Colab. Moreover, we believe optimizing our neural network approach would have given us better results, so that is something that can be worked on. We think that our model could be used in a variety of different applications, not just retail or shopping data. By using an item based collaborative filtering approach, we could easily convert this model to fit different contexts as necessary.
 
+Link to the output of our code in Google Drive (file was too large for Github): [submission.csv](https://drive.google.com/file/d/1u2jmFNcYAH-AXxC6-KkBDmLhRpWv4yvw/view?usp=sharing)
+
